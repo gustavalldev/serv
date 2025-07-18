@@ -1,0 +1,21 @@
+=== WireGuard Server Information ===
+Server IP: 109.107.170.233
+Server Port: 51820
+Server Public Key: BTeHvM6BlReq8rt/5tBKNkKWRqh/qtigYTfLOGS73Rg=
+Interface: wg0
+Subnet: 10.8.0.0/24
+
+=== Команды управления ===
+Статус: wg show
+Перезапуск: systemctl restart wg-quick@wg0
+Логи: journalctl -u wg-quick@wg0
+
+=== Скрипт управления ===
+Создать peer: /usr/local/bin/wg-manager.sh create <name> <ip>
+Удалить peer: /usr/local/bin/wg-manager.sh remove <name>
+Список peer'ов: /usr/local/bin/wg-manager.sh list
+Получить конфиг: /usr/local/bin/wg-manager.sh config <name>
+
+=== Тестовый клиент ===
+Файл: /root/test_client.conf
+IP: 10.8.0.2
